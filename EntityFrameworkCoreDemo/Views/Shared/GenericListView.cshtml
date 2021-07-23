@@ -1,0 +1,25 @@
+﻿
+<h1>List View for: @ViewBag.ViewType</h1>
+
+<button onclick="location.href='@Url.Action("Create", $"{@ViewBag.ViewType}")'" type="button" class="btn btn-primary">Add</button>
+<table class="table table-dark table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Id</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var obj in Model)
+        {
+        <tr>
+            <td>@obj.Name</td>
+            <td>@obj.Id</td>
+            <td><button onclick="location.href='@Url.Action("Index", $"{@ViewBag.ViewType}", new { id = $"{obj.Id}" })'" type="button" class="btn btn-info">View</button></td>
+            <td><button onclick="location.href='@Url.Action("Edit", $"{@ViewBag.ViewType}", new { id = $"{obj.Id}" })'" type="button" class="btn btn-info">Edit</button></td>
+            <td><button onclick="location.href='@Url.Action("Delete", $"{@ViewBag.ViewType}", new { id = $"{obj.Id}" })'" type="button" class="btn btn-danger">Delete</button></td>
+        </tr>
+        }
+    </tbody>
+</table>

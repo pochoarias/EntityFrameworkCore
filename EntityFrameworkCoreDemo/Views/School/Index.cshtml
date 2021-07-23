@@ -1,0 +1,22 @@
+﻿@model School
+
+@{
+    ViewData["Title"] = "School View";
+}
+
+<h1>School View</h1>
+
+<br />
+@if (Model != null)
+{
+    <p><b>Id: </b>@Model.Id</p>
+    <p><b>Name: </b>@Model.Name</p>
+}
+else
+{
+    <h2>School is not available</h2>
+}
+
+
+
+
